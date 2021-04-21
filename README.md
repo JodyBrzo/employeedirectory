@@ -9,13 +9,13 @@
 You can view the live deployed app on GitHub Pages here [Deployed Note Taker App ](https://jodybrzo.github.io/employeedirectory/)
 
 
-![SAMPLE](public/assets/mockup-home.png)
+![SAMPLE](public/mockup-home.png)
 React Table is populated witd the employee API that is being saved in state.
 
-![SAMPLE](public/assets/mockup-sort.png)
+![SAMPLE](public/mockup-sort.png)
 Click on any column header and click the blue sort indicator to sort any column ascending or descending.
 
-![SAMPLE](public/assets/mockup-filter.png)
+![SAMPLE](public/mockup-filter.png)
 Use the text fields under any column header to filter the results.
 
 
