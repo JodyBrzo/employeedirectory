@@ -1,9 +1,33 @@
 import React from "react";
 import "./style.css";
-import { useTable, useSortBy } from 'react-table'
+import { useTable, useFilters, useSortBy } from 'react-table'
 
+// Define a default UI for filtering
+function DefaultColumnFilter({
+  column: { filterValue, preFilteredRows, setFilter },
+}) {
+  const count = preFilteredRows.length
+
+  return (
+    <input
+      value={filterValue || ''}
+      onChange={e => {
+        setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
+      }}
+      placeholder={`Search ${count} records...`}
+    />
+  )
+}
 
 function Table({ columns, data }) {
+  const defaultColumn = React.useMemo(
+    () => ({
+      // Let's set up our default Filter UI
+      Filter: DefaultColumnFilter,
+    }),
+    []
+  )
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -14,7 +38,9 @@ function Table({ columns, data }) {
     {
       columns,
       data,
+      defaultColumn,
     },
+    useFilters,
     useSortBy
   )
 
@@ -33,6 +59,7 @@ function Table({ columns, data }) {
                 // we can add them into the header props
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render('Header')}
+                  <div>{column.canFilter ? column.render('Filter') : null}</div>
                   {/* Add a sort direction indicator */}
                   <span>
                     {column.isSorted

@@ -5,15 +5,9 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import Table from "../components/Table";
-import Alert from "../components/Alert";
-import makeData from '../makeData';
-
 
 function Employee() {
   const [employees, setEmployees] = useState([]);
-  // const [userIndex, setUserIndex] = useState(0);
-
-  // const data = React.useMemo(() => makeData(2000), [])
 
   const columns = React.useMemo(
     () => [
@@ -23,6 +17,7 @@ function Employee() {
           {
             Header: 'First Name',
             accessor: 'name.first',
+            filter: 'text'
           },
           {
             Header: 'Last Name',
@@ -78,7 +73,8 @@ function Employee() {
       <Container style={{ marginTop: 30 }}>
         <Row>
           <Col size="md-12">
-            <h1>Employees Sorted By Last Name</h1>
+          <h1>Global Company Search Directory</h1>
+          <span>Click a column name to display sort indicator.  Filtering can be done on any column.</span>
           </Col>
         </Row>
         <Row>

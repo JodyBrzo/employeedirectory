@@ -4,7 +4,7 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span>Employee Directory 2021</span>
+      <span>DayRec, Inc. Employee Directory Copyright 2021</span>
     </footer>
   );
 }
