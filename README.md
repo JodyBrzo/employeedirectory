@@ -12,8 +12,12 @@ You can view the live deployed app on GitHub Pages here [Deployed Note Taker App
 ![SAMPLE](public/mockup-home.png)
 React Table is populated with the employee API that is being saved in state.
 
+
+
 ![SAMPLE](public/mockup-sort.png)
 Click on any column header and click the blue sort indicator to sort any column ascending or descending.
+
+
 
 ![SAMPLE](public/mockup-filter.png)
 Use the text fields under any column header to filter the results.
