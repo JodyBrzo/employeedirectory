@@ -38,8 +38,9 @@ You can view the live deployed app on GitHub Pages here [Deployed Note Taker App
 # Technology used
 
 * React, useEffect and use State
-* Node
+* express
 * npm
+* AXIOS
 * React Table
 * Bootstrap
 
